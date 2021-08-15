@@ -1,8 +1,8 @@
-defmodule NervesSystemUPBoard.MixProject do
+defmodule NervesContainersX8664Uefi.MixProject do
   use Mix.Project
 
-  @github_organization "fhunleth"
-  @app :nerves_system_up_board
+  @github_organization "nerves-containers"
+  @app :nerves_containers_x86_64_uefi
   @source_url "https://github.com/#{@github_organization}/#{@app}"
   @version Path.join(__DIR__, "VERSION")
            |> File.read!()
@@ -42,7 +42,8 @@ defmodule NervesSystemUPBoard.MixProject do
     [
       type: :system,
       artifact_sites: [
-        {:github_releases, "#{@github_organization}/#{@app}"}
+        # {:github_releases, "#{@github_organization}/#{@app}"}
+        {:prefix, "https://nerves-containers.steffend.me/artifacts/"}
       ],
       build_runner_opts: build_runner_opts(),
       platform: Nerves.System.BR,
@@ -74,7 +75,7 @@ defmodule NervesSystemUPBoard.MixProject do
 
   defp description do
     """
-    Nerves System - up_board
+    Nerves System - X86_64 UEFI
     """
   end
 
@@ -105,7 +106,7 @@ defmodule NervesSystemUPBoard.MixProject do
       "fwup.conf",
       "nerves_initramfs.conf",
       "LICENSE",
-      "linux",
+      "linux-5.10.defconfig",
       "mix.exs",
       "nerves_defconfig",
       "post-build.sh",
