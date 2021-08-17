@@ -106,7 +106,7 @@ defmodule NervesSystemUPBoard.MixProject do
       "fwup.conf",
       "nerves_initramfs.conf",
       "LICENSE",
-      "linux",
+      "linux-5.10.defconfig",
       "mix.exs",
       "nerves_defconfig",
       "post-build.sh",
