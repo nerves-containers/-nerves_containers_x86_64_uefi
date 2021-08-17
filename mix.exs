@@ -56,7 +56,7 @@ defmodule NervesContainersX8664Uefi.MixProject do
       env: [
         {"TARGET_ARCH", "x86_64"},
         {"TARGET_OS", "linux"},
-        {"TARGET_ABI", "gnu"}
+        {"TARGET_ABI", "musl"}
       ],
       checksum: package_files()
     ]
@@ -64,10 +64,10 @@ defmodule NervesContainersX8664Uefi.MixProject do
 
   defp deps do
     [
-      {:jason, "~> 1.1", runtime: false},
+      {:jason, "~> 1.2", runtime: false},
       {:nerves, "~> 1.5.4 or ~> 1.6.0 or ~> 1.7.4", runtime: false},
       {:nerves_system_br, "1.16.4", runtime: false},
-      {:nerves_toolchain_x86_64_nerves_linux_gnu, "~> 1.4.2", runtime: false},
+      {:nerves_toolchain_x86_64_nerves_linux_musl, "~> 1.4.3", runtime: false},
       {:nerves_system_linter, "~> 0.4", only: [:dev, :test], runtime: false},
       {:ex_doc, "~> 0.22", only: :docs, runtime: false}
     ]
