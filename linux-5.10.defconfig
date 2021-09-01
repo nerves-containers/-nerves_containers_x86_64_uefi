@@ -1,3 +1,4 @@
+# taken from https://github.com/balena-os/balena-intel/blob/62ce3f0bacc2d5dac1b7ea932a90895ecb542678/layers/meta-balena-genericx86/recipes-kernel/linux/genericx86-64-ext/defconfig
 #
 # Automatically generated file; DO NOT EDIT.
 # Linux/x86 5.10.21 Kernel Configuration
