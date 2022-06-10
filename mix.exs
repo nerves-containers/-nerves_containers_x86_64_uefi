@@ -66,8 +66,8 @@ defmodule NervesContainersX8664Uefi.MixProject do
     [
       {:jason, "~> 1.2", runtime: false},
       {:nerves, "~> 1.5.4 or ~> 1.6.0 or ~> 1.7.4", runtime: false},
-      {:nerves_system_br, "1.17.2", runtime: false},
-      {:nerves_toolchain_x86_64_nerves_linux_musl, "~> 1.4.3", runtime: false},
+      {:nerves_system_br, "1.19.1", runtime: false},
+      {:nerves_toolchain_x86_64_nerves_linux_gnu, "1.5.0", runtime: false},
       {:nerves_system_linter, "~> 0.4", only: [:dev, :test], runtime: false},
       {:ex_doc, "~> 0.22", only: :docs, runtime: false}
     ]
@@ -92,7 +92,7 @@ defmodule NervesContainersX8664Uefi.MixProject do
   defp package do
     [
       files: package_files(),
-      licenses: ["Apache 2.0"],
+      licenses: ["Apache-2.0"],
       links: %{"GitHub" => @source_url}
     ]
   end
@@ -117,9 +117,14 @@ defmodule NervesContainersX8664Uefi.MixProject do
   end
 
   defp build_runner_opts() do
+    # Download source files first to get download errors right away.
+    [make_args: primary_site() ++ ["source", "all", "legal-info"]]
+  end
+
+  defp primary_site() do
     case System.get_env("BR2_PRIMARY_SITE") do
       nil -> []
-      primary_site -> [make_args: ["BR2_PRIMARY_SITE=#{primary_site}"]]
+      primary_site -> ["BR2_PRIMARY_SITE=#{primary_site}"]
     end
   end
 
