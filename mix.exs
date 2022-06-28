@@ -65,9 +65,9 @@ defmodule NervesContainersX8664Uefi.MixProject do
   defp deps do
     [
       {:jason, "~> 1.2", runtime: false},
-      {:nerves, "~> 1.5.4 or ~> 1.6.0 or ~> 1.7.4", runtime: false},
-      {:nerves_system_br, "1.20.0", runtime: false},
-      {:nerves_toolchain_x86_64_nerves_linux_gnu, "1.5.0", runtime: false},
+      {:nerves, "~> 1.5.4 or ~> 1.6.0 or ~> 1.7.15 or ~> 1.8.0", runtime: false},
+      {:nerves_system_br, "1.20.3", runtime: false},
+      {:nerves_toolchain_x86_64_nerves_linux_gnu, "1.6.0", runtime: false},
       {:nerves_system_linter, "~> 0.4", only: [:dev, :test], runtime: false},
       {:ex_doc, "~> 0.22", only: :docs, runtime: false}
     ]
@@ -107,6 +107,7 @@ defmodule NervesContainersX8664Uefi.MixProject do
       "nerves_initramfs.conf",
       "LICENSE",
       "linux-5.10.defconfig",
+      "busybox.fragment",
       "mix.exs",
       "nerves_defconfig",
       "post-build.sh",
