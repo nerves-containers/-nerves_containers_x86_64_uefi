@@ -42,8 +42,7 @@ defmodule NervesContainersX8664Uefi.MixProject do
     [
       type: :system,
       artifact_sites: [
-        # {:github_releases, "#{@github_organization}/#{@app}"}
-        {:prefix, "https://nerves-containers.steffend.me/artifacts/"}
+        {:github_releases, "#{@github_organization}/#{@app}"}
       ],
       build_runner_opts: build_runner_opts(),
       platform: Nerves.System.BR,
@@ -64,10 +63,9 @@ defmodule NervesContainersX8664Uefi.MixProject do
 
   defp deps do
     [
-      {:jason, "~> 1.2", runtime: false},
-      {:nerves, "~> 1.5.4 or ~> 1.6.0 or ~> 1.7.15 or ~> 1.8", runtime: false},
-      {:nerves_system_br, "1.21.3", runtime: false},
-      {:nerves_toolchain_x86_64_nerves_linux_gnu, "1.6.1", runtime: false},
+      {:nerves, "~> 1.11", runtime: false},
+      {:nerves_system_br, "1.28.3", runtime: false},
+      {:nerves_toolchain_x86_64_nerves_linux_gnu, "13.2.0", runtime: false},
       {:nerves_system_linter, "~> 0.4", only: [:dev, :test], runtime: false},
       {:ex_doc, "~> 0.22", only: :docs, runtime: false}
     ]

@@ -1,5 +1,10 @@
 # Changelog
 
+## v1.28.1
+
+* Updated dependencies
+  * [nerves_system_br: bump to v1.28.3](https://github.com/nerves-project/nerves_system_br/releases/tag/v1.28.3)
+
 ## v1.12.2
 
 This release updates to [Buildroot
